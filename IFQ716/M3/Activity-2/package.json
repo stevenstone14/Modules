@@ -1,0 +1,15 @@
+{
+  "name": "activity-1",
+  "version": "1.0.0",
+  "description": "3.4 Activity 1: Creating an AJAZ API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

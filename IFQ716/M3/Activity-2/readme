@@ -1,0 +1,8 @@
+3.4 Activity 1: Creating an AJAZ API
+
+This activity is split into three parts:
+
+Part 1: Boilerplate
+Part 2: Restricting which request method is allowed on a route
+Part 3: Client JavaScript (the hacky way).
+Let's begin on the following page.

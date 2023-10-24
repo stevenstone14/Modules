@@ -1,0 +1,40 @@
+<script>
+    async function getData(){
+        let res = await fetch("http://localhost:3000/data",{method: "GET"});
+        let data = await res.json();
+        console.log(data);
+        let dataDiv = document.querySelector("#data");
+        for (let cat of data) {
+        const paragraph = document.createElement("p")
+        const text = document.createTextNode(cat);
+        paragraph.appendChild(text);
+
+        dataDiv.appendChild(paragraph);
+        }
+    }
+    getData();
+
+
+   async function getForm(e){   
+    e.preventDefault();
+    const cat = document.querySelector('#cat');
+    try {
+        const posty = await fetch("http://localhost:3000/add",{method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(cat.value)});
+        const result = await posty.json();
+        console.log(result);
+    } catch (er){
+        console.log(er)
+    }
+    return false;
+   }
+</script>
+
+ <form id="form" onsubmit="return getForm(event)">
+    <input id="cat"/>
+    <input type="submit"/>
+ </form>
+
+<h1>Naughty Client</h1>
+
+<div id="data"></div>
+
