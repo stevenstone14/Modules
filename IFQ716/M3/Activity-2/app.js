@@ -30,7 +30,7 @@ function routing(req,res){
     const method = req.method;
     if (url.startsWith("/data")){
         if (method == "GET") {
-            res.writeHead(200,{"Content-Type": "application/json"});
+            res.writeHead(200,{"Content-Type": "application/json"},{"Access-Control-Allow-Origin": "*"});
             res.write(JSON.stringify(data));
             res.end();
           }
@@ -40,6 +40,22 @@ function routing(req,res){
             res.write("Login");
             res.end();
           }
+    } else if (url.startsWith("/delete")) {
+        console.log(method);
+        if (method=="OPTIONS"){
+            res.writeHead(200, {"Access-Control-Allow-Origin":"*",
+            "Access-Control-Allow-Methods": "OPTIONS, DELETE",});
+            res.end();
+        }
+        if (method == "DELETE"){
+            res.writeHead("200", {
+                "Access-Control-Allow-Origin":"*",
+            });
+            res.write("delete-route");
+            res.end();
+        }
+
+        
     } else if (url.startsWith("/client")){
        
         if (method == "GET") {

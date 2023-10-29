@@ -19,9 +19,12 @@
     e.preventDefault();
     const cat = document.querySelector('#cat');
     try {
-        const posty = await fetch("http://localhost:3000/add",{method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(cat.value)});
-        const result = await posty.json();
-        console.log(result);
+        await fetch("http://localhost:3000/add",
+        {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: cat.value
+        });
     } catch (er){
         console.log(er)
     }
