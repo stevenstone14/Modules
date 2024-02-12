@@ -1,0 +1,29 @@
+img { 
+max-width: 30%
+}
+
+p {
+font-size: 9pt
+}
+
+h1,h3 {
+font-size: 14pt
+}
+
+#first-article-title {
+    font-size: 16pt
+}
+
+#first-article-praph {
+    font-size: 11pt
+}
+
+
+.flex-container {
+display:flex
+}
+
+.space-between {
+justify-content: space-between;
+
+}
