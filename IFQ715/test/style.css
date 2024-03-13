@@ -1,0 +1,9 @@
+.row {
+    background: blue;
+    margin-top: 20px;
+  }
+  
+  .col {
+    border: solid 1px green;
+    padding: 10px;
+  }
